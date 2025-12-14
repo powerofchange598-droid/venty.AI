@@ -1,0 +1,135 @@
+{
+    "appName": "Venty",
+    "welcomeBrand": "Venty'ye Hoş Geldiniz",
+    "common": {
+        "save": "Kaydet",
+        "cancel": "İptal",
+        "delete": "Sil",
+        "edit": "Düzenle",
+        "done": "Tamamlandı",
+        "loading": "Yükleniyor...",
+        "error": "Bir hata oluştu.",
+        "submit": "Gönder",
+        "confirm": "Onayla",
+        "remove": "Kaldır",
+        "publish": "Yayınla",
+        "nextTip": "Sonraki İpucu"
+    },
+    "market": {
+        "title": "Mağaza",
+        "searchPlaceholder": "Mağazada ara...",
+        "categories": {
+            "food": "Gıda",
+            "clothing": "Giyim",
+            "electronics": "Elektronik",
+            "appliances": "Aletler",
+            "beauty": "Güzellik",
+            "health": "Sağlık",
+            "gym": "Spor",
+            "home": "Ev",
+            "toys": "Oyuncaklar",
+            "books": "Kitaplar",
+            "sports": "Spor"
+        },
+        "quickFilters": {
+            "all": "Tümü",
+            "nearMe": "Yakınımdakiler",
+            "topRated": "En Çok Satanlar",
+            "deals": "Fırsatlar",
+            "lowPrice": "Düşük Fiyat",
+            "recommended": "Sana Özel",
+            "newArrivals": "Yeni Gelenler"
+        }
+    },
+    "onboarding": {
+        "terms": {
+            "title": "Şartlar ve Koşullar",
+            "checkboxLabel": "Şartlar ve Koşulları ve",
+            "privacyPolicyLink": "Gizlilik Politikasını",
+            "content": "Şartlar ve Koşullar\n\n- **Şartların Kabulü**: Bu uygulamayı kullanarak, bu Şartlar ve Koşullara uymayı kabul etmiş olursunuz.\n- **Sağlanan Hizmetler**: Uygulama, finansal planlama, bütçeleme ve ilgili araçlar sunar. Uygulama resmi mali veya hukuki danışmanlık sağlamaz.\n- **Kullanıcı Sorumluluğu**: Sağladığınız bilgilerin (gelir, gider ve bütçe detayları gibi) doğruluğundan siz sorumlusunuz.\n- **Hesap Güvenliği**: Giriş bilgilerinizi güvende tutmaktan siz sorumlusunuz. Hesabınız altındaki her türlü faaliyet sizin sorumluluğunuzda kabul edilecektir.\n- **Üçüncü Taraf Hizmetleri**: Google, Facebook veya Apple ile giriş yapmayı seçerseniz, onların ayrı kullanım koşullarını kabul etmiş olursunuz.\n- **Gizlilik**: Verileriniz güvenli bir şekilde saklanacaktır. Yasal olarak gerekmedikçe, kişisel bilgilerinizi sizin onayınız olmadan üçüncü taraflarla paylaşmayacağız.\n- **Sorumluluğun Sınırlandırılması**: Uygulama, uygulamanın kullanımından kaynaklanan mali kayıplardan, yanlış kararlardan veya zararlardan sorumlu değildir.\n- **Fesih**: Bu Şartları ihlal eden hesapları askıya alma veya feshetme hakkını saklı tutarız.\n- **Şartlardaki Değişiklikler**: Bu Şartlar ve Koşulları herhangi bir zamanda güncelleyebiliriz. Kullanıcılar önemli değişikliklerden haberdar edilecek ve yeniden kabul etmeleri gerekebilecektir.\n- **Geçerli Hukuk**: Bu Şartlar, şirketin kayıtlı olduğu ülkenin yasalarına tabidir."
+        }
+    },
+    "nav": {
+        "home": "Anasayfa",
+        "budget": "Bütçe",
+        "store": "Mağaza",
+        "messages": "Mesajlar",
+        "barter": "Takas",
+        "family": "Aile",
+        "settings": "Ayarlar"
+    },
+    "dashboard": {
+        "helloUser": "Merhaba, {{name}}",
+        "financialSummarySubtitle": "İşte mali özetiniz."
+    },
+    "settings": {
+        "title": "Ayarlar",
+        "country": "Ülke",
+        "merchantMode": "Satıcı Modu",
+        "darkMode": "Karanlık Mod",
+        "logout": {
+            "button": "Çıkış Yap",
+            "confirmMessage": "Çıkış yapmak istediğinizden emin misiniz?",
+            "successMessage": "Başarıyla çıkış yaptınız."
+        }
+    },
+    "tips": {
+        "coffee": {
+            "title": "Günlük Kahvenizi Gözden Geçirin",
+            "body": "Günlük kafe kahvesini atlamak size ~{{savings}} kazandırabilir ve aile tatili hedefinize her yıl %{{progress}} daha fazla yaklaşmanızı sağlayabilir!"
+        },
+        "transport": {
+            "title": "Ulaşımınızı Optimize Edin",
+            "body": "Haftada iki kez araç paylaşımını veya toplu taşımayı kullanmayı düşünün. Bu, size aylık yakıt ve masraflardan yaklaşık {{savings}} kazandırabilir."
+        },
+        "groceries": {
+            "title": "Market Alışverişini Daha Akıllıca Yapın",
+            "body": "Bir alışveriş listesi yapmak ve ona sadık kalmak, anlık satın alımları azaltabilir ve market faturanızı %15'e kadar düşürebilir, bu da size her ay ~{{savings}} kazandırır."
+        },
+        "clothing": {
+            "title": "30 Gün Kuralını Deneyin",
+            "body": "Gerekli olmayan kıyafetleri almadan önce 30 gün bekleyin. Hala istiyorsanız, alın. Bu, anlık harcamaları engellemeye ve para biriktirmeye yardımcı olur."
+        },
+        "generic_review": {
+            "title": "Aboneliklerinizi Gözden Geçirin",
+            "body": "Aylık aboneliklerinize bir göz atın. Hepsini kullanıyor musunuz? Kullanılmayan sadece bir hizmeti iptal etmek bile kolay tasarruf sağlayabilir!"
+        }
+    },
+    "tomChat": {
+        "title": "Sabit Bütçe Oluştur",
+        "placeholder": "Cevabınızı yazın...",
+        "steps": {
+            "start": "Merhaba, {{name}}! Venty'ye hoş geldiniz. Finansal durumunuzu net bir şekilde görmenize yardımcı olmak için buradayım. Aylık sabit giderlerinizi ayarlayarak başlayalım. Hazır mısınız? 😊",
+            "housing": "Harika! İlk olarak, barınma. Aylık kira veya konut kredisi ödüyor musunuz ve ne kadar?",
+            "bills": "Anlaşıldı. 👍 Şimdi temel faturalar. Elektrik, su, gaz, internet ve telefon için toplam aylık maliyetleriniz nedir?",
+            "transportation": "Mükemmel. Sırada ulaşım var. Her ay yakıt veya toplu taşıma için genellikle ne kadar harcıyorsunuz? 🚗",
+            "education": "Peki. Okul veya üniversite öğrenim ücretleri gibi eğitim masraflarınız ne kadar?",
+            "insurance": "Tamam. Peki, aylık sigorta ödemeleriniz var mı? Sağlık, sosyal veya araba sigortası olabilir.",
+            "household": "Not edildi. Spor salonu üyeliği, kulüp aboneliği veya kreş gibi diğer düzenli ev masraflarınız ne kadar?",
+            "installments": "Neredeyse bitti! Kredi, kredi kartı veya satın aldığınız bir ürün için aylık taksitleriniz var mı?",
+            "savings": "Harika! Peki ya birikimler? Her ay düzenli olarak birikim veya yatırım için sabit bir miktar ayırıyor musunuz?",
+            "other": "Son olarak, başka yaygın sabit giderleriniz var mı? Netflix, Spotify gibi abonelikler veya aileye düzenli maddi destek gibi?",
+            "summary": "Mükemmel, her şey tamam. İşte aylık sabit giderlerinizin bir özeti. Bu doğru mu?",
+            "final": "Mükemmel! Bunu sabit bütçe temeliniz olarak kaydettim. Harika bir başlangıç yaptınız! 🎉",
+            "editConfirmation": "Sorun değil! Her şeyin doğru olduğundan emin olmak için baştan başlayalım. Aylık kiranız veya konut kredisi ödemeniz ne kadar?"
+        },
+        "summaryTable": {
+            "title": "Mükemmel! İhtiyacım olan her şeye sahibim. İşte aylık sabit giderlerinizin bir özeti:",
+            "headerCategory": "Kategori",
+            "headerAmount": "Aylık Tutar",
+            "footerTotal": "Toplam",
+            "question": "Aylık sabit bütçenizi sonlandırmadan önce bunlardan herhangi birini düzenlemek ister misiniz?"
+        },
+        "expenseCategories": {
+            "housing": "Barınma",
+            "bills": "Temel Faturalar",
+            "transportation": "Ulaşım",
+            "education": "Eğitim",
+            "insurance": "Sigorta",
+            "household": "Ev Giderleri",
+            "installments": "Kredi Taksitleri",
+            "savings": "Birikim",
+            "other": "Diğer Giderler"
+        }
+    }
+}

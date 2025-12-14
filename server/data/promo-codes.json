@@ -1,0 +1,17 @@
+[
+  {
+    "code": "alex456123",
+    "type": "percent",
+    "percent": 100,
+    "validityDaysAfterActivation": 45,
+    "permanent": false,
+    "createdAt": "2025-12-14T16:35:53.884Z"
+  },
+  {
+    "code": "zxcasd456",
+    "type": "percent",
+    "percent": 50,
+    "permanent": true,
+    "createdAt": "2025-12-14T16:35:53.885Z"
+  }
+]

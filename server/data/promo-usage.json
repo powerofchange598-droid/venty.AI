@@ -1,0 +1,29 @@
+[
+  {
+    "code": "zxcv456",
+    "userId": "1",
+    "status": "invalid",
+    "at": "2025-12-14T19:54:34.539Z"
+  },
+  {
+    "code": "zxcasd456",
+    "userId": "1",
+    "status": "activated",
+    "at": "2025-12-14T17:03:28.915Z"
+  },
+  {
+    "code": "zxcv456",
+    "userId": "1",
+    "status": "invalid",
+    "at": "2025-12-14T17:02:30.643Z"
+  },
+  {
+    "code": "alex456123",
+    "userId": "1",
+    "status": "activated",
+    "meta": {
+      "expiresAt": "2026-01-28T16:50:34.009Z"
+    },
+    "at": "2025-12-14T16:50:34.010Z"
+  }
+]

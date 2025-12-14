@@ -1,0 +1,721 @@
+{
+    "appName": "Venty",
+    "welcomeBrand": "Welcome to Venty",
+    "alerts": {
+        "couldNotDetectCountry": "Could not detect your location. Please select your country manually.",
+        "selectCountryManually": "Please verify your country is correct. This helps us personalize your experience.",
+        "guestAction": "This feature is disabled in Guest Mode. Please create an account to continue.",
+        "guestActionPremium": "Create a free account to subscribe to Premium."
+    },
+    "common": {
+        "all": "All",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "edit": "Edit",
+        "done": "Done",
+        "viewOnly": "View only",
+        "loading": "Loading...",
+        "error": "An error occurred.",
+        "submit": "Submit",
+        "confirm": "Confirm",
+        "remove": "Remove",
+        "publish": "Publish",
+        "nextTip": "Next tip",
+        "select": "Select"
+    },
+    "onboarding": {
+        "getStartedPrompt": "How would you like to get started?",
+        "continueWithGoogle": "Continue with Google",
+        "continueWithFacebook": "Continue with Facebook",
+        "continueWithApple": "Continue with Apple",
+        "orDivider": "Or",
+        "signupWithEmailTitle": "Sign up with Email",
+        "signupWithEmailSubtitle": "Start managing your own finances.",
+        "joinFamilyTitle": "Join a family account",
+        "joinFamilySubtitle": "Collaborate with your family using a code.",
+        "personalFormTitle": "Tell us about yourself",
+        "nameLabel": "Your name",
+        "namePlaceholder": "e.g. Mohamed",
+        "countryLabel": "Country",
+        "incomeLabel": "Total monthly income ({{currency}})",
+        "incomePlaceholder": "e.g. 10000",
+        "householdLabel": "Household size",
+        "householdPlaceholder": "e.g. 4",
+        "joinFormTitle": "Join your family",
+        "joinFormSubtitle": "Enter the code provided by your family head.",
+        "joinCodePlaceholder": "e.g. Venty-XYZ123",
+        "errorInvalidCode": "Invalid family code. Please try again.",
+        "goBack": "← Go back",
+        "exploreAsGuest": "Explore the App as a Guest",
+        "terms": {
+            "title": "Terms & Conditions",
+            "checkboxLabel": "I have read and agree to the Terms & Conditions and",
+            "privacyPolicyLink": "Privacy Policy",
+            "content": "Terms & Conditions\n\n- **Acceptance of Terms**: By using this app, you agree to comply with these Terms & Conditions.\n- **Services Provided**: The app offers financial planning, budgeting, and related tools. The app does not provide official financial or legal advice.\n- **User Responsibility**: You are responsible for the accuracy of the information you provide (such as income, expenses, and budget details).\n- **Account Security**: You are responsible for keeping your login credentials safe. Any activity under your account will be considered your responsibility.\n- **Third-Party Services**: If you choose to sign in with Google, Facebook, or Apple, you agree to their separate terms of use.\n- **Privacy**: Your data will be stored securely. We will not share your personal information with third parties without your consent, except as required by law.\n- **Limitations of Liability**: The app is not responsible for financial losses, incorrect decisions, or damages resulting from the use of the app.\n- **Termination**: We reserve the right to suspend or terminate accounts that violate these Terms.\n- **Changes to Terms**: We may update these Terms & Conditions at any time. Users will be notified of major changes and may be required to re-accept.\n- **Governing Law**: These Terms are governed by the laws of the country in which the company is registered."
+        }
+    },
+    "buttons": {
+        "continue": "Continue",
+        "useSampleData": "Use sample data",
+        "joinFamily": "Join family"
+    },
+    "nav": {
+        "home": "Home",
+        "budget": "Budget",
+        "plans": "Plans",
+        "store": "Store",
+        "messages": "Messages",
+        "exchange": "Exchange",
+        "family": "Family",
+        "settings": "Settings",
+        "merchant": {
+            "dashboard": "Dashboard",
+            "products": "Products",
+            "orders": "Orders",
+            "storeSetup": "Store setup",
+            "ads": "Marketing",
+            "analytics": "Analytics",
+            "addProduct": "Add product"
+        }
+    },
+    "dashboard": {
+        "helloUser": "Hello, {{name}}",
+        "financialSummarySubtitle": "Here's your financial summary.",
+        "availableBalance": "Available balance",
+        "fromAfterFixedCosts": "From {{amount}} after fixed costs",
+        "spendingBreakdown": "Spending breakdown",
+        "noSpendingRecorded": "No spending recorded yet.",
+        "notificationsAlerts": "Notifications & alerts",
+        "quickActions": "Quick actions",
+        "manageBudget": "Manage budget",
+        "goToStore": "Go to store",
+        "exploreInvestments": "Explore investments",
+        "investmentAdvisor": {
+            "title": "Investment Advisor",
+            "subtitle": "Turn small savings into big investments.",
+            "genericTip": "Consistently investing small amounts can lead to significant growth over time through compounding.",
+            "premiumUpsell": "Unlock portfolio analysis with Premium.",
+            "lockedTitle": "Premium Investments",
+            "lockedSubtitle": "Upgrade to unlock advanced analysis and AI-powered suggestions.",
+            "unlockCta": "Unlock Now",
+            "unlockedMessage": "Unlocked!"
+        }
+    },
+    "budget": {
+        "title": "Budget breakdown",
+        "titleViewOnly": "Family budget (view only)",
+        "amountToAllocate": "Amount to allocate:",
+        "totalAllocated": "Total allocated:",
+        "errorOver100": "Total allocation cannot exceed 100%.",
+        "allocated": "Allocated",
+        "of": "of",
+        "savePlan": "Save plan"
+    },
+    "fixedExpenses": {
+        "title": "Set up fixed expenses",
+        "titleViewOnly": "Family fixed expenses (view only)",
+        "subtitle": "First, let's account for your recurring monthly costs.",
+        "totalIncome": "Total income",
+        "fixedCosts": "Fixed costs",
+        "forBudget": "For budget",
+        "yourExpenses": "Your expenses",
+        "noExpenses": "No fixed expenses added yet.",
+        "addNew": "Add new expense",
+        "namePlaceholder": "Expense name",
+        "amountPlaceholder": "Amount",
+        "iconLabel": "Icon (emoji)",
+        "colorLabel": "Color",
+        "monthly": "Monthly",
+        "weekly": "Weekly",
+        "finishSetup": "Finish setup & go to budgeting",
+        "goToDashboard": "Go to dashboard"
+    },
+    "family": {
+        "title": "Family",
+        "chatTitle": "Family chat",
+        "chatSubtitle": "Coordinate & discuss finances",
+        "members": "Family members",
+        "head": "Head",
+        "member": "Member",
+        "sharedGoals": "Shared goals",
+        "deadline": "Deadline",
+        "milestone": "Milestone",
+        "insight": "Family insight",
+        "generating": "Generating...",
+        "refresh": "Refresh",
+        "invite": "Invite a member",
+        "inviteSubtitle": "Share this code with a family member to let them join.",
+        "notifications": "Recent notifications"
+    },
+    "market": {
+        "title": "Venty Store",
+        "searchPlaceholder": "Search products or brands...",
+        "categories": {
+            "food": "Food",
+            "clothing": "Clothing",
+            "electronics": "Electronics",
+            "appliances": "Appliances",
+            "beauty": "Beauty",
+            "health": "Health",
+            "gym": "Gym & Fitness",
+            "home": "Home & Living",
+            "toys": "Kids & Toys",
+            "books": "Books",
+            "sports": "Sports",
+            "all": "All",
+            "new-arrivals": "New Arrivals",
+            "best-sellers": "Best Sellers",
+            "beauty-skincare": "Beauty & Skincare",
+            "health-wellness": "Health & Wellness",
+            "electronics-gadgets": "Electronics & Gadgets",
+            "fashion-apparel": "Fashion & Apparel",
+            "home-living": "Home & Living",
+            "food-beverages": "Food & Beverages",
+            "subscriptions-digital": "Subscriptions & Digital",
+            "kids-toys": "Kids & Toys",
+            "seasonal-picks": "Seasonal Picks"
+        },
+        "quickFilters": {
+            "all": "All",
+            "nearMe": "Near Me",
+            "topRated": "Best Sellers",
+            "deals": "Deals",
+            "lowPrice": "Low Price",
+            "recommended": "For You",
+            "newArrivals": "New Arrivals"
+        }
+    },
+    "favourites": {
+        "title": "Your Favourites",
+        "emptyTitle": "Your wishlist is empty",
+        "emptySubtitle": "Tap the star on any product to save it to your list for later.",
+        "browseCta": "Browse products"
+    },
+    "cart": {
+        "title": "Shopping Cart",
+        "emptyTitle": "Your cart is empty",
+        "emptySubtitle": "Looks like you haven't added anything yet.",
+        "summaryTitle": "Order Summary",
+        "subtotal": "Subtotal",
+        "deliveryFee": "Delivery Fee",
+        "free": "FREE",
+        "promoDiscount": "Promo discount ({{code}})",
+        "grandTotal": "Grand Total",
+        "promoCode": "Promo Code",
+        "promoPlaceholder": "e.g. SAVE20",
+        "apply": "Apply",
+        "promoSuccess": "Promo code applied successfully!",
+        "promoFail": "Invalid promo code.",
+        "checkoutCta": "Proceed to Checkout"
+    },
+    "product": {
+        "reorderCta": "Reorder in 1 tap",
+        "addToCartCta": "Add to Cart"
+    },
+    "productDetail": {
+        "notFound": "Product not found.",
+        "reviews": "reviews",
+        "noDescription": "No description available.",
+        "ratingsTitle": "Ratings & reviews",
+        "writeReviewCta": "Write a review",
+        "alreadyReviewed": "You already reviewed",
+        "noReviews": "No reviews yet. Be the first!",
+        "helpful": "Helpful",
+        "seller": "Seller",
+        "page": "Page",
+        "of": "of"
+    },
+    "settings": {
+        "title": "Settings",
+        "localization": "Region & Language",
+        "language": "Language",
+        "currency": "Local Currency",
+        "displayCurrency": "Display all amounts in USD",
+        "country": "Country",
+        "accountDetails": "Account Details",
+        "profilePicture": "Profile Picture",
+        "storeProfile": {
+            "title": "Store Profile",
+            "brandName": "Brand Name",
+            "logo": "Brand Logo"
+        },
+        "name": "Name",
+        "email": "Email",
+        "familyManagement": "Family management",
+        "exportReport": "Export family report",
+        "leaveFamily": "Leave family",
+        "leaveFamilyCta": "Leave",
+        "appSettings": "App settings",
+        "merchantMode": "Merchant mode",
+        "darkMode": "Dark Mode",
+        "swipeBack": "Enable swipe back",
+        "pushNotifications": "Push notifications",
+        "sections": {
+            "account": "Account",
+            "subscriptions": "My Subscriptions",
+            "appSettings": "App Settings",
+            "communitySupport": "Community & Support",
+            "general": "General"
+        },
+        "labels": {
+            "editProfile": "Edit Profile",
+            "paymentHistory": "Payment History",
+            "ventyPremium": "Venty Premium",
+            "active": "Active",
+            "upgrade": "Upgrade Plan",
+            "adSubscription": "Ad Subscription",
+            "subscribe": "Subscribe",
+            "appearance": "Appearance Settings",
+            "highPerformanceMode": "High Performance Mode",
+            "performanceHint": "Reduces visual complexity for smoother performance.",
+            "referAFriend": "Refer a Friend",
+            "helpCenterSupport": "Help Center",
+            "switchToPersonal": "Switch to Personal Mode",
+            "switchToMerchant": "Switch to Merchant Mode",
+            "deleteAccount": "Delete Account",
+            "password": "Password",
+            "ageOptional": "Age (Optional)",
+            "occupationOptional": "Occupation (Optional)"
+        },
+        "modals": {
+            "selectLanguage": "Select Language",
+            "selectCountry": "Select Country",
+            "selectCurrency": "Select Currency",
+            "searchLanguages": "Search languages",
+            "searchCountries": "Search countries",
+            "searchCurrencies": "Search currencies"
+        },
+        "paymentMethods": {
+            "title": "Payment Methods",
+            "add": {
+                "button": "Add Method",
+                "title": "Add New Payment Method",
+                "nameLabel": "Gateway Name",
+                "typeLabel": "Gateway Type",
+                "descriptionLabel": "Description (Optional)",
+                "logo": "Logo",
+                "addCta": "Add Gateway"
+            }
+        },
+        "guestMode": {
+            "title": "Guest Mode",
+            "heading": "You are exploring as a guest",
+            "description": "Create an account to save your data and unlock all features.",
+            "exitButton": "Exit Guest Mode & Sign Up"
+        },
+        "security": {
+            "title": "Security & Privacy",
+            "securityFeatures": "Security Features",
+            "biometricLogin": "Biometric Login",
+            "biometricEnabled": "Enabled",
+            "biometricDisabled": "Disabled",
+            "biometricPromptTitle": "Venty Login",
+            "biometricPromptSubtitle": "Verify your identity",
+            "biometricSuccess": "Verified!",
+            "pinLock": "App PIN Lock",
+            "encryption": "End-to-End Encryption",
+            "encryptionActive": "Active",
+            "sessionManagement": "Active Sessions",
+            "sessionManageCta": "Manage Devices",
+            "fraudAlerts": "Fraud Detection Alerts"
+        },
+        "twoFactorAuth": {
+            "title": "Two-Factor Authentication",
+            "enabled": "Enabled",
+            "disabled": "Disabled",
+            "modalTitle": "Verify Your Phone",
+            "modalSubtitle": "We sent a 6-digit code to {{phoneNumber}}. Enter it below to enable 2FA.",
+            "otpPlaceholder": "6-digit code",
+            "otpInvalid": "Please enter a 6-digit code.",
+            "otpIncorrect": "Incorrect code. Please try again.",
+            "verifyCta": "Verify & Enable",
+            "enabledSuccess": "2FA enabled successfully!"
+        },
+        "privacy": {
+            "privacyFeatures": "Privacy Features",
+            "dataTransparency": "Data Transparency",
+            "viewDashboard": "View Dashboard",
+            "downloadData": "Download Your Data",
+            "exportCta": "Export",
+            "deleteData": "Delete Your Account",
+            "deleteCta": "Delete Permanently",
+            "deleteConfirmMessage": "Are you sure you want to permanently delete your account? This action cannot be undone.",
+            "adPreferences": "Ad Preferences",
+            "manageCta": "Manage",
+            "marketplacePrivacy": "Hide Marketplace Purchases"
+        },
+        "devControls": "Developer controls (prototype)",
+        "devControlsSubtitle": "Switch between user account types to see different app views.",
+        "switchTo": "Switch to {{type}} view",
+        "chatSettings": "Chat settings",
+        "aiReplyTitle": "Enable AI reply suggestions",
+        "aiContextTitle": "AI context (FAQ sheet)",
+        "notifications": {
+            "title": "Notification Preferences",
+            "frequency": "Frequency",
+            "daily": "Daily",
+            "weekly": "Weekly",
+            "monthly": "Monthly",
+            "categoriesTitle": "Notification Categories",
+            "spending": "Spending Alerts",
+            "family": "Family Activity",
+            "goals": "Goals Progress",
+            "investments": "Investment Updates",
+            "ads": "Promotions & Ads"
+        },
+        "logout": {
+            "button": "Logout",
+            "confirmTitle": "Confirm Logout",
+            "confirmMessage": "Are you sure you want to log out?",
+            "successMessage": "You have been logged out successfully."
+        }
+    },
+    "paymentWallet": {
+        "title": "Payment Wallet",
+        "continueWith": "Continue with {{method}}",
+        "payNow": "Pay Now",
+        "cardNumber": "Card Number",
+        "expiry": "MM/YY",
+        "cvv": "CVV",
+        "paymentSuccessful": "Payment successful!",
+        "formTitle": "Enter Card Details"
+    },
+    "notifications": {
+        "dynamic": {
+            "overspend": "Heads up! Your {{category}} spending is at {{spent}} of your {{allocated}} budget.",
+            "goalProgress": "Great job! You've reached {{progress}} of your '{{goalName}}' goal.",
+            "investmentGrowth": "Your investments saw a {{percent}} growth this week. Keep it up!",
+            "familyActivity": "{{member}} just contributed {{amount}} to a family goal!"
+        },
+        "family": {
+            "milestone": "Congratulations! Family savings crossed {{savings}} milestone.",
+            "tightBudget": "Your budget is getting tight. You are spending faster than saving this month.",
+            "goalCloser": "You’re 20% closer to your family trip goal."
+        }
+    },
+    "tips": {
+        "coffee": {
+            "title": "Rethink your daily coffee",
+            "body": "Skipping the daily café coffee could save you ~{{savings}}, getting you {{progress}}% closer to your family trip goal each year!"
+        },
+        "transport": {
+            "title": "Optimize your commute",
+            "body": "Consider carpooling or using public transport twice a week. This could save you around {{savings}} on fuel and costs monthly."
+        },
+        "groceries": {
+            "title": "Shop smarter for groceries",
+            "body": "Making a shopping list and sticking to it can reduce impulse buys and cut your grocery bill by up to 15%, saving you ~{{savings}} each month."
+        },
+        "clothing": {
+            "title": "Try the 30-day rule",
+            "body": "Before buying non-essential clothes, wait 30 days. If you still want it, buy it. This helps curb impulse spending and saves money."
+        },
+        "generic_review": {
+            "title": "Review your subscriptions",
+            "body": "Take a look at your monthly subscriptions. Are you using all of them? Cancelling just one unused service can lead to easy savings!"
+        }
+    },
+    "lifePlans": {
+        "title": "Life plans",
+        "aiGeneratorTitle": "AI plan generator",
+        "aiGeneratorSubtitle": "Not sure where to start? Describe a goal, and we'll create a plan for you.",
+        "aiPlaceholder": "e.g., 'Retire comfortably by 60'",
+        "generate": "Generate",
+        "suggestedPlan": "Suggested plan:",
+        "discard": "Discard",
+        "addToPlans": "Add to my plans",
+        "milestones": "Milestones",
+        "target": "Target",
+        "addManually": "Add new plan manually"
+    },
+    "cookieBanner": {
+        "message": "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",
+        "accept": "Got it"
+    },
+    "merchantOnboarding": {
+        "title": "Welcome to merchant mode!",
+        "subtitle": "Let's set up your store in a few quick steps.",
+        "steps": {
+            "brand": "Brand",
+            "contact": "Contact",
+            "logo": "Logo",
+            "summary": "Summary"
+        },
+        "brand": {
+            "title": "Brand Details",
+            "slugDescription": "Your store URL will be"
+        },
+        "contact": {
+            "title": "Contact & Location"
+        },
+        "logo": {
+            "title": "Upload Your Logo"
+        },
+        "summaryTitle": "Confirm your details",
+        "summarySubtitle": "You can change these details later in settings.",
+        "summaryBrand": "Brand",
+        "summarySlug": "Slug",
+        "summaryPhone": "Phone",
+        "summaryLocation": "Location",
+        "next": "Next",
+        "createStoreCta": "Create my store",
+        "terms": "I agree to the Venty Merchant Terms, including the <strong>5% commission</strong> on all successful orders and the <strong>escrow-based payment system</strong> where funds are released after delivery confirmation."
+    },
+    "storeSetup": {
+        "title": "Store Setup",
+        "editorTitle": "Store Editor",
+        "export": "Export",
+        "mobile": "Mobile",
+        "desktop": "Desktop",
+        "themeSelector": {
+            "title": "Choose Your Store's Theme"
+        },
+        "themes": {
+            "minimal": "Minimal",
+            "dark": "Dark Mode",
+            "neon": "Neon",
+            "pastel": "Pastel",
+            "corporate": "Corporate",
+            "creative": "Creative",
+            "sport": "Sport",
+            "luxury": "Luxury",
+            "nature": "Nature",
+            "tech": "Tech",
+            "magazine": "Magazine",
+            "cards": "Minimal Cards",
+            "split": "Split Screen",
+            "carousel": "Interactive Carousel",
+            "glass": "Glassmorphism",
+            "serif": "Elegant Serif",
+            "masonry": "Compact Masonry",
+            "showcase": "Wide Showcase",
+            "story": "Lifestyle Story",
+            "streetwear": "Youth Streetwear",
+            "lunar": "Lunar",
+            "noir": "Noir",
+            "ivory": "Ivory",
+            "eclipse": "Eclipse",
+            "zenith": "Zenith",
+            "crimson": "Crimson",
+            "serenity": "Serenity",
+            "atlas": "Atlas",
+            "orbit": "Orbit",
+            "radiant": "Radiant"
+        },
+        "branding": {
+            "title": "Branding & Logo",
+            "primaryColor": "Primary color",
+            "fontPair": "Font Pair",
+            "palette": "Color Palette",
+            "defaultStoreName": "Your Store",
+            "defaultHeroHeadline": "Welcome to Your Store"
+        },
+        "fonts": {
+            "modern": "Modern",
+            "classic": "Classic",
+            "playful": "Playful"
+        },
+        "layout": {
+            "title": "Store Layout",
+            "gridStyle": "Grid style",
+            "grid2x2": "2x2 Grid",
+            "grid3x3": "3x3 Grid",
+            "list": "List",
+            "cardStyle": "Card style",
+            "hardShadow": "Hard shadow",
+            "softShadow": "Soft shadow",
+            "border": "Border",
+            "cardCorners": "Card corners",
+            "sharp": "Sharp",
+            "rounded": "Rounded",
+            "very-rounded": "Very rounded",
+            "spacing": "Spacing",
+            "tight": "Tight",
+            "normal": "Normal",
+            "loose": "Loose"
+        },
+        "sections": {
+            "title": "Store Sections",
+            "add": "Add section",
+            "featured-products": "Featured products",
+            "new-arrivals": "New arrivals",
+            "best-sellers": "Best Sellers",
+            "collections": "Collections",
+            "about-store": "About Store",
+            "text-banner": "Text banner",
+            "image-with-text": "Image with text",
+            "testimonials": "Testimonials"
+        }
+    },
+    "ads": {
+        "title": "Ad Campaigns",
+        "subtitle": "Promote your products and reach more customers.",
+        "createAd": "Create new ad",
+        "activeAds": "Active campaigns",
+        "noActiveAds": "You have no active ad campaigns.",
+        "adType": "Ad type",
+        "bannerAd": "Banner ad ($5/day)",
+        "productAd": "Promoted product ($3/day)",
+        "adContent": "Ad content",
+        "bannerImage": "Banner image URL",
+        "selectProduct": "Select a product to promote",
+        "duration": "Duration (days)",
+        "totalCost": "Total cost",
+        "launchAd": "Launch ad",
+        "adCreated": "Ad created successfully!",
+        "expires": "Expires",
+        "clicks": "Clicks",
+        "impressions": "Impressions"
+    },
+    "purchaseRequests": {
+        "title": "Purchase Request",
+        "noteLabel": "Add a note for your parent (optional)",
+        "notePlaceholder": "e.g., I need this for my school project.",
+        "sendRequest": "Send Request to Parent",
+        "requestSent": "Request sent!",
+        "parentTitle": "Family Purchase Requests",
+        "pending": "Pending",
+        "history": "History",
+        "requestedBy": "{{name}} wants to buy:",
+        "approve": "Approve",
+        "reject": "Reject",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "noPending": "No pending requests.",
+        "noHistory": "No past requests.",
+        "noteFromGuest": "Note: \"{{note}}\"",
+        "requestPurchase": "Request Purchase",
+        "viewRequests": "View Purchase Requests"
+    },
+    "merchantVerification": {
+        "getVerified": "Get Verified",
+        "verified": "Verified",
+        "verifiedBySales": "Verified through sales volume",
+        "verifiedByPayment": "Verified by payment",
+        "badgeCriteria": "Sell 15+ products or subscribe for $10/month to get your 'Verified' badge.",
+        "salesProgress": "{{count}}/15 products sold",
+        "or": "OR",
+        "payForBadge": "Pay for Verification Badge",
+        "paymentTitle": "Monthly Verification Subscription",
+        "paymentAmount": "$10.00 / month",
+        "selectGateway": "Select Payment Method",
+        "payNow": "Pay Now & Get Verified",
+        "paymentSuccess": "Payment successful! Your store is now verified.",
+        "creditCard": "Credit/Debit Card",
+        "paypal": "PayPal"
+    },
+    "invest": {
+        "title": "Investment Advisor",
+        "searchPlaceholder": "Search by name or ticker...",
+        "disclaimer": "Not financial advice. All data is simulated for demonstration purposes. Consult a professional before investing.",
+        "loadMore": "Load More",
+        "endOfResults": "You've reached the end.",
+        "noResults": "No investments match your criteria.",
+        "risk": {
+            "all": "All",
+            "low": "Low",
+            "medium": "Medium",
+            "high": "High"
+        },
+        "filters": {
+            "allTypes": "All Types"
+        },
+        "sort": {
+            "recommended": "Sort: Recommended",
+            "performance": "Sort: Performance (YTD)",
+            "volatility": "Sort: Volatility",
+            "marketCap": "Sort: Market Cap"
+        },
+        "guest": {
+            "title": "Investing is a Premium Feature",
+            "subtitle": "Create a free account to see how you can grow your wealth with our AI-powered investment advisor.",
+            "cta": "Create Account"
+        },
+        "premium": {
+            "title": "Unlock Your Financial Future",
+            "subtitle": "Upgrade to Premium to get access to our AI Investment Advisor, personalized top picks, and real-time market alerts.",
+            "cta": "Upgrade Now ($22/mo)"
+        }
+    },
+    "adPackages": {
+        "title": "Upgrade Your Reach with Ad Packages",
+        "subscribe": "Subscribe",
+        "upgrade": "Upgrade",
+        "currentPlan": "Current Plan",
+        "activeUntil": "Active until {{date}}",
+        "unlockFeature": "Upgrade to unlock",
+        "confirmation": {
+            "title": "Subscription Active!",
+            "subtitle": "Your {{planName}} plan is now active. You've unlocked the following benefits:",
+            "dates": "Your plan is active from {{startDate}} to {{endDate}}.",
+            "getStarted": "Start Creating Ads"
+        },
+        "packages": {
+            "weeklyBasic": {
+                "name": "Weekly Basic",
+                "price": "$7",
+                "duration": "/week",
+                "benefits": [
+                    "Store Ads visibility",
+                    "Appears in search results (limited)",
+                    "No Analytics"
+                ]
+            },
+            "monthlyBasic": {
+                "name": "Monthly Basic",
+                "price": "$25",
+                "duration": "/month",
+                "benefits": [
+                    "Store + Search Ads",
+                    "Consistent exposure",
+                    "No Analytics"
+                ]
+            },
+            "monthlyPremium": {
+                "name": "Monthly Premium",
+                "price": "$40",
+                "duration": "/month",
+                "benefits": [
+                    "Featured in search results top",
+                    "Homepage banner slot",
+                    "Analytics (views, clicks, conversions)"
+                ]
+            },
+            "quarterlyPremium": {
+                "name": "Quarterly Premium",
+                "price": "$100",
+                "duration": "/3 months",
+                "benefits": [
+                    "Same as Monthly Premium",
+                    "Priority merchant support",
+                    "Discounted price"
+                ]
+            }
+        }
+    },
+    "orderManagement": {
+        "statuses": {
+            "all": "All Orders",
+            "pending-payment": "Pending Payment",
+            "paid-awaiting-fulfillment": "Awaiting Fulfillment",
+            "shipped": "Shipped",
+            "in-transit": "In Transit",
+            "completed": "Completed",
+            "cancelled": "Cancelled"
+        },
+        "trackingNumberLabel": "Tracking Number",
+        "markAsShipped": "Mark as Shipped",
+        "confirmDelivery": "Confirm Delivery (Simulate)",
+        "payoutDetails": "Payout Details",
+        "orderTotal": "Order Total",
+        "commission": "5% Platform Commission",
+        "yourPayout": "Your Payout"
+    }
+    ,
+    "goals": {
+        "lockedTitle": "Unlock Premium Goals",
+        "lockedSubtitle": "Track goals and investments with smart insights.",
+        "upgradeCta": "Upgrade to Premium"
+    }
+}

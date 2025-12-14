@@ -1,0 +1,46 @@
+export const governorates = {
+    "EG": [
+      "Alexandria",
+      "Aswan",
+      "Asyut",
+      "Beheira",
+      "Beni Suef",
+      "Cairo",
+      "Dakahlia",
+      "Damietta",
+      "Faiyum",
+      "Gharbia",
+      "Giza",
+      "Ismailia",
+      "Kafr El Sheikh",
+      "Luxor",
+      "Matrouh",
+      "Minya",
+      "Monufia",
+      "New Valley",
+      "North Sinai",
+      "Port Said",
+      "Qalyubia",
+      "Qena",
+      "Red Sea",
+      "Sharqia",
+      "Sohag",
+      "South Sinai",
+      "Suez"
+    ],
+    "SA": [
+        "Riyadh",
+        "Makkah",
+        "Madinah",
+        "Eastern Province",
+        "Qassim",
+        "Asir",
+        "Tabuk",
+        "Hail",
+        "Northern Borders",
+        "Jizan",
+        "Najran",
+        "Bahah"
+    ]
+    // Add more countries as needed
+};

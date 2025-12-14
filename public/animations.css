@@ -1,0 +1,56 @@
+/* --- Venty Smart Animation System --- */
+
+/* --- Keyframes --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes cinematic-enter {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes premium-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--brand-primary-raw), 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--brand-primary-raw), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--brand-primary-raw), 0); }
+}
+
+/* --- Animation Classes --- */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.4s ease-out;
+}
+
+.animate-cinematic-enter {
+  animation: cinematic-enter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Specific component animations */
+.glow-on-hover:hover {
+    box-shadow: 0 0 15px 2px rgba(var(--brand-primary-raw), 0.4);
+}
+
+.icon-glowable {
+    transition: filter 0.3s ease;
+}
+.active .icon-glowable {
+    filter: drop-shadow(0 0 5px rgba(var(--brand-primary-raw), 0.7));
+}
+
+/* High performance mode overrides are handled in index.html */

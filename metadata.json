@@ -1,0 +1,17 @@
+{
+  "name": "Venty",
+  "description": "Venty is a personal finance assistant combining salary budgeting, automated monthly shopping, P2P swapping, and an AI investment advisor to help young professionals and families in the MENA regionAnd the whole world manage their finances effectively.",
+  "shortcuts": [
+    {
+      "name": "Add New Product",
+      "short_name": "Add Product",
+      "description": "Quickly add a new product to your inventory.",
+      "url": "/#/merchant/products#add"
+    }
+  ],
+  "requestFramePermissions": [
+    "geolocation",
+    "camera",
+    "microphone"
+  ]
+}

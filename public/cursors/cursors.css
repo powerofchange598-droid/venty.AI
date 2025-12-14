@@ -1,0 +1,37 @@
+/* Venty - Professional Cursor System */
+
+:root {
+  --cursor-fill: rgb(var(--brand-primary));
+  --cursor-hotspot-x: 2px;
+  --cursor-hotspot-y: 2px;
+}
+
+/* --- Base Cursor Definitions --- */
+/*
+  We use CSS variables within embedded SVGs to make them theme-aware.
+  The hotspot coordinates (e.g., 2 2) tell the browser where the "tip" of the cursor is.
+*/
+
+:root {
+  --cursor-arrow: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="rgb(var(--brand-primary-raw))" stroke="rgba(var(--bg-primary-raw), 0.8)" stroke-width="1.5" d="M4.2 2.8l15.3 12.3-5.8 1.4-1.4 5.8-3.4-6.9z"/></svg>') var(--cursor-hotspot-x) var(--cursor-hotspot-y), auto;
+  --cursor-pointer: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="rgb(var(--brand-primary-raw))" stroke="rgba(var(--bg-primary-raw), 0.8)" stroke-width="1.5" d="M10.2,21.5l-2.2-6.4l-6.3-2.2L19.8,2.5l-9.6,19z"/></svg>') 6 2, auto;
+  --cursor-text: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="rgb(var(--brand-primary-raw))" d="M12,2a1,1 0 0,1 1,1v18a1,1 0 0,1-2,0V3a1,1 0 0,1 1-1z M8,3a1,1 0 0,1 1,1v2a1,1 0 0,1-2,0V4a1,1 0 0,1 1-1z M16,3a1,1 0 0,1 1,1v2a1,1 0 0,1-2,0V4a1,1 0 0,1 1-1z M8,19a1,1 0 0,1 1,1v2a1,1 0 0,1-2,0v-2a1,1 0 0,1 1-1z M16,19a1,1 0 0,1 1,1v2a1,1 0 0,1-2,0v-2a1,1 0 0,1 1-1z"/></svg>') 12 12, auto;
+  --cursor-not-allowed: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="9" stroke="rgba(var(--bg-primary-raw), 0.8)" stroke-width="1.5" fill="rgb(var(--brand-primary-raw))"/><path d="M6 6 l12 12" stroke="rgba(var(--bg-primary-raw), 0.8)" stroke-width="2.5"/></svg>') 12 12, auto;
+}
+
+
+/* --- Element Mapping --- */
+/* Apply custom cursors only on devices that support fine pointers (mice, trackpads) */
+@media (pointer: fine) {
+    /* Default */
+    html, body { cursor: var(--cursor-arrow); }
+
+    /* Pointer / Hand */
+    a, button, [role="button"], input[type="radio"], input[type="checkbox"], select, label { cursor: var(--cursor-pointer); }
+
+    /* Text */
+    input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], textarea { cursor: var(--cursor-text); }
+
+    /* Special Cases */
+    :disabled { cursor: var(--cursor-not-allowed); }
+}

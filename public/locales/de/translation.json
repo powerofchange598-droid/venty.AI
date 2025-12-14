@@ -1,0 +1,230 @@
+{
+    "appName": "Venty",
+    "welcomeBrand": "Willkommen bei Venty",
+    "alerts": {
+        "guestAction": "Diese Funktion ist im Gastmodus deaktiviert. Bitte erstellen Sie ein Konto, um fortzufahren.",
+        "guestActionPremium": "Erstellen Sie ein kostenloses Konto, um Premium zu abonnieren."
+    },
+    "common": {
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "delete": "Löschen",
+        "edit": "Bearbeiten",
+        "done": "Fertig",
+        "loading": "Wird geladen...",
+        "error": "Ein Fehler ist aufgetreten.",
+        "submit": "Senden",
+        "confirm": "Bestätigen",
+        "remove": "Entfernen",
+        "publish": "Veröffentlichen",
+        "nextTip": "Nächster Tipp",
+        "select": "Auswählen"
+    },
+    "onboarding": {
+        "exploreAsGuest": "App als Gast erkunden",
+        "terms": {
+            "title": "Allgemeine Geschäftsbedingungen",
+            "checkboxLabel": "Ich habe die Allgemeinen Geschäftsbedingungen und die",
+            "privacyPolicyLink": "Datenschutzrichtlinie",
+            "content": "Allgemeine Geschäftsbedingungen\n\n- **Annahme der Bedingungen**: Durch die Nutzung dieser App erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden.\n- **Angebotene Dienstleistungen**: Die App bietet Finanzplanung, Budgetierung und zugehörige Tools. Die App bietet keine offizielle Finanz- oder Rechtsberatung.\n- **Benutzerverantwortung**: Sie sind für die Richtigkeit der von Ihnen bereitgestellten Informationen (wie Einkommen, Ausgaben und Budgetdetails) verantwortlich.\n- **Kontosicherheit**: Sie sind dafür verantwortlich, Ihre Anmeldeinformationen sicher aufzubewahren. Jede Aktivität unter Ihrem Konto wird als Ihre Verantwortung betrachtet.\n- **Dienste von Drittanbietern**: Wenn Sie sich mit Google, Facebook oder Apple anmelden, stimmen Sie deren separaten Nutzungsbedingungen zu.\n- **Datenschutz**: Ihre Daten werden sicher gespeichert. Wir geben Ihre persönlichen Daten nicht ohne Ihre Zustimmung an Dritte weiter, es sei denn, dies ist gesetzlich vorgeschrieben.\n- **Haftungsbeschränkungen**: Die App ist nicht verantwortlich für finanzielle Verluste, falsche Entscheidungen oder Schäden, die aus der Nutzung der App resultieren.\n- **Kündigung**: Wir behalten uns das Recht vor, Konten zu sperren oder zu kündigen, die gegen diese Bedingungen verstoßen.\n- **Änderungen der Bedingungen**: Wir können diese Allgemeinen Geschäftsbedingungen jederzeit aktualisieren. Benutzer werden über wesentliche Änderungen informiert und müssen möglicherweise erneut zustimmen.\n- **Geltendes Recht**: Diese Bedingungen unterliegen den Gesetzen des Landes, in dem das Unternehmen registriert ist."
+        }
+    },
+    "nav": {
+        "home": "Startseite",
+        "budget": "Budget",
+        "store": "Shop",
+        "messages": "Nachrichten",
+        "barter": "Tausch",
+        "family": "Familie",
+        "settings": "Einstellungen"
+    },
+    "dashboard": {
+        "helloUser": "Hallo, {{name}}",
+        "financialSummarySubtitle": "Hier ist deine finanzielle Zusammenfassung."
+    },
+        "settings": {
+        "title": "Einstellungen",
+        "country": "Land",
+        "merchantMode": "Händlermodus",
+        "darkMode": "Dunkelmodus",
+        "sections": {
+            "account": "Konto",
+            "subscriptions": "Meine Abonnements",
+            "appSettings": "App-Einstellungen",
+            "communitySupport": "Community & Support",
+            "general": "Allgemein"
+        },
+        "labels": {
+            "editProfile": "Profil bearbeiten",
+            "paymentHistory": "Zahlungsverlauf",
+            "ventyPremium": "Venty Premium",
+            "active": "Aktiv",
+            "upgrade": "Upgrade",
+            "adSubscription": "Werbeabonnement",
+            "subscribe": "Abonnieren",
+            "appearance": "Darstellung",
+            "highPerformanceMode": "Hochleistungsmodus",
+            "performanceHint": "Reduziert visuelle Komplexität für flüssigere Performance.",
+            "referAFriend": "Freund empfehlen",
+            "helpCenterSupport": "Hilfe-Center & Support",
+            "switchToPersonal": "Zum Persönlichen Modus wechseln",
+            "switchToMerchant": "Zum Händler-Modus wechseln",
+            "deleteAccount": "Konto löschen",
+            "password": "Passwort",
+            "ageOptional": "Alter (optional)",
+            "occupationOptional": "Beruf (optional)"
+        },
+        "modals": {
+            "selectLanguage": "Sprache auswählen",
+            "selectCountry": "Land auswählen",
+            "selectCurrency": "Währung auswählen",
+            "searchLanguages": "Sprachen suchen",
+            "searchCountries": "Länder suchen",
+            "searchCurrencies": "Währungen suchen"
+        },
+        "guestMode": {
+            "title": "Gastmodus",
+            "heading": "Sie erkunden als Gast",
+            "description": "Erstellen Sie ein Konto, um Ihre Daten zu speichern und alle Funktionen freizuschalten.",
+            "exitButton": "Gastmodus verlassen & Registrieren"
+        },
+        "logout": {
+            "button": "Abmelden",
+            "confirmTitle": "Abmeldung bestätigen",
+            "confirmMessage": "Möchten Sie sich wirklich abmelden?",
+            "successMessage": "Sie wurden erfolgreich abgemeldet."
+        }
+    },
+    "market": {
+        "title": "Shop",
+        "searchPlaceholder": "Im Shop suchen...",
+        "categories": {
+            "food": "Lebensmittel",
+            "clothing": "Kleidung",
+            "electronics": "Elektronik",
+            "appliances": "Haushaltsgeräte",
+            "beauty": "Schönheit",
+            "health": "Gesundheit",
+            "gym": "Fitnessstudio",
+            "home": "Wohnen",
+            "toys": "Spielzeug",
+            "books": "Bücher",
+            "sports": "Sport"
+        },
+        "quickFilters": {
+            "all": "Alle",
+            "nearMe": "In meiner Nähe",
+            "topRated": "Bestseller",
+            "deals": "Angebote",
+            "lowPrice": "Niedriger Preis",
+            "recommended": "Für dich",
+            "newArrivals": "Neuheiten"
+        }
+    },
+    "tomChat": {
+        "title": "Chat mit Tom",
+        "greeting": "Hallo {{name}}! Wie kann ich Ihnen heute helfen?",
+        "placeholder": "Fragen Sie Tom alles...",
+        "suggestions": {
+            "overspending": "Wo gebe ich zu viel aus?",
+            "investing": "Wie fange ich an zu investieren?",
+            "vacation": "Kann ich mir einen Urlaub leisten?"
+        }
+    },
+    "cookieBanner": {
+        "message": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Indem Sie diese Website weiterhin besuchen, stimmen Sie unserer Verwendung von Cookies zu.",
+        "accept": "Verstanden"
+    },
+    "invest": {
+        "title": "Anlageberater",
+        "searchPlaceholder": "Suche nach Name oder Ticker...",
+        "disclaimer": "Keine Finanzberatung. Alle Daten sind zu Demonstrationszwecken simuliert. Konsultieren Sie vor einer Investition einen Fachmann.",
+        "loadMore": "Mehr laden",
+        "endOfResults": "Sie haben das Ende erreicht.",
+        "noResults": "Keine Anlagen entsprechen Ihren Kriterien.",
+        "risk": {
+            "all": "Alle",
+            "low": "Niedrig",
+            "medium": "Mittel",
+            "high": "Hoch"
+        },
+        "filters": {
+            "allTypes": "Alle Typen"
+        },
+        "sort": {
+            "recommended": "Sortieren: Empfohlen",
+            "performance": "Sortieren: Performance (YTD)",
+            "volatility": "Sortieren: Volatilität",
+            "marketCap": "Sortieren: Marktkap."
+        },
+        "guest": {
+            "title": "Investieren ist eine Premium-Funktion",
+            "subtitle": "Erstellen Sie ein kostenloses Konto, um zu sehen, wie Sie Ihr Vermögen mit unserem KI-gestützten Anlageberater vermehren können.",
+            "cta": "Konto erstellen"
+        },
+        "premium": {
+            "title": "Schalten Sie Ihre finanzielle Zukunft frei",
+            "subtitle": "Upgraden Sie auf Premium, um Zugang zu unserem KI-Anlageberater, personalisierten Top-Picks und Echtzeit-Marktwarnungen zu erhalten.",
+            "cta": "Jetzt upgraden (22 $/Monat)"
+        }
+    },
+     "tips": {
+        "coffee": {
+            "title": "Überdenken Sie Ihren täglichen Kaffee",
+            "body": "Wenn Sie auf den täglichen Kaffee im Café verzichten, könnten Sie ~{{savings}} sparen und Ihrem Familienurlaubsziel jedes Jahr um {{progress}}% näher kommen!"
+        },
+        "transport": {
+            "title": "Optimieren Sie Ihren Arbeitsweg",
+            "body": "Erwägen Sie, zweimal pro Woche Fahrgemeinschaften zu bilden oder öffentliche Verkehrsmittel zu nutzen. Dies könnte Ihnen monatlich rund {{savings}} an Kraftstoff- und sonstigen Kosten sparen."
+        },
+        "groceries": {
+            "title": "Kaufen Sie Lebensmittel klüger ein",
+            "body": "Eine Einkaufsliste zu erstellen und sich daran zu halten, kann Impulskäufe reduzieren und Ihre Lebensmittelrechnung um bis zu 15% senken, was Ihnen jeden Monat ~{{savings}} spart."
+        },
+        "clothing": {
+            "title": "Probieren Sie die 30-Tage-Regel aus",
+            "body": "Bevor Sie nicht unbedingt notwendige Kleidung kaufen, warten Sie 30 Tage. Wenn Sie es dann immer noch wollen, kaufen Sie es. Dies hilft, Impulsausgaben zu zügeln und Geld zu sparen."
+        },
+        "generic_review": {
+            "title": "Überprüfen Sie Ihre Abonnements",
+            "body": "Schauen Sie sich Ihre monatlichen Abonnements an. Nutzen Sie alle? Schon die Kündigung eines ungenutzten Dienstes kann zu einfachen Einsparungen führen!"
+        }
+    },
+    "tomChat": {
+        "title": "Fixbudget Einrichten",
+        "placeholder": "Schreiben Sie Ihre Antwort...",
+        "steps": {
+            "start": "Hallo, {{name}}! Willkommen bei Venty. Ich bin hier, um Ihnen zu helfen, einen klaren Überblick über Ihre Finanzen zu bekommen. Beginnen wir mit der Einrichtung Ihrer festen monatlichen Ausgaben. Sind Sie bereit? 😊",
+            "housing": "Großartig! Zuerst das Wohnen. Zahlen Sie monatliche Miete oder eine Hypothek und wie hoch ist der Betrag?",
+            "bills": "Verstanden. 👍 Jetzt zu den Grundrechnungen. Was sind Ihre kombinierten monatlichen Kosten für Strom, Wasser, Gas, Internet und Telefon?",
+            "transportation": "Ausgezeichnet. Als Nächstes der Transport. Wie viel geben Sie normalerweise pro Monat für Kraftstoff oder öffentliche Verkehrsmittel aus? 🚗",
+            "education": "In Ordnung. Was ist mit den Ausbildungskosten, wie Schul- oder Universitätsgebühren?",
+            "insurance": "Okay. Haben Sie monatliche Versicherungszahlungen? Dies könnte für Kranken-, Sozial- oder Autoversicherung sein.",
+            "household": "Notiert. Wie sieht es mit anderen regelmäßigen Haushaltskosten aus? Dinge wie eine Fitnessstudio-Mitgliedschaft, ein Club-Abonnement oder die Kindertagesstätte?",
+            "installments": "Wir sind fast fertig! Haben Sie monatliche Ratenzahlungen, wie für einen Kredit, eine Kreditkarte oder ein gekauftes Produkt?",
+            "savings": "Super! Was ist mit Ersparnissen? Legen Sie regelmäßig einen festen Betrag für Ersparnisse oder Investitionen beiseite?",
+            "other": "Zuletzt, gibt es noch andere übliche feste Ausgaben? Wie Abonnements (Netflix, Spotify) oder regelmäßige finanzielle Unterstützung für die Familie?",
+            "summary": "Perfekt, ich habe alles. Hier ist eine Zusammenfassung Ihrer festen monatlichen Ausgaben. Sieht das korrekt aus?",
+            "final": "Ausgezeichnet! Ich habe dies als Ihre feste Budgetgrundlage gespeichert. Sie haben einen großartigen Start hingelegt! 🎉",
+            "editConfirmation": "Kein Problem! Fangen wir von vorne an, um sicherzustellen, dass alles stimmt. Wie hoch ist Ihre monatliche Miete oder Hypothekenzahlung?"
+        },
+        "summaryTable": {
+            "title": "Perfekt! Ich habe alles, was ich brauche. Hier ist eine Zusammenfassung Ihrer festen monatlichen Ausgaben:",
+            "headerCategory": "Kategorie",
+            "headerAmount": "Monatlicher Betrag",
+            "footerTotal": "Gesamt",
+            "question": "Möchten Sie etwas davon bearbeiten, bevor wir Ihr monatliches Fixbudget fertigstellen?"
+        },
+        "expenseCategories": {
+            "housing": "Wohnen",
+            "bills": "Grundrechnungen",
+            "transportation": "Transport",
+            "education": "Bildung",
+            "insurance": "Versicherung",
+            "household": "Haushaltskosten",
+            "installments": "Raten",
+            "savings": "Ersparnisse",
+            "other": "Sonstige Ausgaben"
+        }
+    }
+}
