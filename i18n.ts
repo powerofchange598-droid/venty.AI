@@ -1,32 +1,48 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
+import { COUNTRY_TO_LANG } from './data/LangTop100';
 
-const savedLng = 'en';
+function detectInitialLanguage(): string {
+  try {
+    const saved = localStorage.getItem('ventyLang');
+    if (saved && typeof saved === 'string') return saved;
+    const country = localStorage.getItem('ventyCountry');
+    const fromCountry = country && COUNTRY_TO_LANG[country]?.code;
+    if (fromCountry) return fromCountry;
+    const browser = (navigator?.language || 'en').split('-')[0];
+    return browser || 'en';
+  } catch {
+    return 'en';
+  }
+}
+
+const initialLang = detectInitialLanguage();
 
 i18n
   .use(HttpBackend)
   .use(initReactI18next)
   .init({
-    lng: 'en',
+    lng: initialLang,
     fallbackLng: 'en',
-    interpolation: {
+    interpolation:
+    {
       escapeValue: false,
     },
-    backend: {
+    backend:
+    {
       loadPath: '/locales/{{lng}}/translation.json',
     },
   });
 
-const rtlLangs = new Set([]);
+const rtlLangs = new Set<string>(['ar', 'fa', 'ur', 'he']);
 
 i18n.on('languageChanged', (lng) => {
-  const base = 'en';
-  const isRtl = false;
+  const isRtl = rtlLangs.has(lng);
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
-    document.documentElement.setAttribute('lang', base);
-    try { localStorage.setItem('ventyLang', 'en'); } catch {}
+    document.documentElement.setAttribute('lang', lng);
+    try { localStorage.setItem('ventyLang', lng); } catch {}
   }
 });
 

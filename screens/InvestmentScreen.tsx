@@ -251,9 +251,9 @@ const InvestmentScreen: React.FC<InvestmentScreenProps> = ({ user, isPremiumUser
                                  <MagnifyingGlassIcon className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-brand-primary"/>
                                  <input type="text" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder="Search by name or ticker..." className="w-full pl-12"/>
                             </div>
-                            <div className="flex bg-bg-tertiary rounded-lg p-1 border border-border-primary">
+                            <div className="flex bg-bg-tertiary rounded-lg p-1 border border-border-primary gap-1">
                                 {(['All', 'Low', 'Medium', 'High'] as const).map(risk => (
-                                    <button key={risk} onClick={() => setRiskFilter(risk)} className={`w-1/4 py-1.5 rounded-md font-semibold transition-colors text-sm ${riskFilter === risk ? 'bg-bg-secondary text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}>{risk}</button>
+                                    <button key={risk} onClick={() => setRiskFilter(risk)} className={`flex-1 px-3 py-1.5 rounded-md font-semibold transition-colors text-sm ${riskFilter === risk ? 'bg-bg-secondary text-text-primary shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}>{risk}</button>
                                 ))}
                             </div>
                         </div>

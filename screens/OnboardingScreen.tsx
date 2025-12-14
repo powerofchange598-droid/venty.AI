@@ -16,6 +16,7 @@ import { useAuth } from '../hooks/useAuth';
 import SelectorModal from '../components/SelectorModal';
 import PasswordStrengthMeter, { checkPasswordStrength } from '../components/PasswordStrengthMeter';
 import { useLocalization } from '../hooks/useLocalization';
+import { AVAILABLE_LANGUAGES } from '../data/LangTop100';
 
 interface OnboardingData {
     name: string;
@@ -555,6 +556,7 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete, onJoinF
     const [authState, setAuthState] = useState<{ provider: string | null; isLoading: boolean; isSuccess: boolean }>({ provider: null, isLoading: false, isSuccess: false });
     const [socialData, setSocialData] = useState<{ name: string; email: string } | null>(null);
     const [isBiometricsAvailable, setIsBiometricsAvailable] = useState(false);
+    const [langOpen, setLangOpen] = useState(false);
 
     const containerVariants: any = {
         hidden: { opacity: 0, y: 20 },
@@ -659,6 +661,11 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete, onJoinF
             case 'welcome':
                 return (
                      <div className="w-full max-w-md text-center">
+                        <div className="flex justify-end mb-2">
+                            <button onClick={() => setLangOpen(true)} className="cta-text-link !text-sm">
+                                {t('settings.language')}
+                            </button>
+                        </div>
                         <motion.h1 variants={containerVariants} className="text-4xl font-bold tracking-tight text-text-primary">{t('welcomeBrand')}</motion.h1>
                         <motion.p variants={containerVariants} className="mt-2 text-xl text-text-secondary">Your money. Your way.</motion.p>
                         <motion.div variants={containerVariants} className="mt-10 space-y-4">
@@ -718,6 +725,18 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete, onJoinF
                     </div>
                 )}
             </main>
+            <SelectorModal
+                isOpen={langOpen}
+                title={t('settings.modals.selectLanguage')}
+                items={AVAILABLE_LANGUAGES.map(l => ({ key: l.code, label: l.nameEn }))}
+                initialSelectedKey={(i18n as any).language}
+                onClose={() => setLangOpen(false)}
+                onSelect={(code) => {
+                    i18n.changeLanguage(code);
+                    try { localStorage.setItem('ventyLang', code); } catch {}
+                }}
+                placeholder={t('settings.modals.searchLanguages')}
+            />
             <Copyright />
         </div>
     );

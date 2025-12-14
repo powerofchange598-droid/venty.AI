@@ -33,7 +33,7 @@ const BottomNav: React.FC<BottomNavProps> = memo(({ user }) => {
 
     navItems.push({ path: '/more', icon: EllipsisHorizontalIcon, label: 'More' });
 
-    const morePaths = ['/settings', '/family', '/my-orders', '/messages', '/financial-snapshot', '/goals', '/payment-methods', '/budget'];
+    const morePaths = ['/settings', '/family', '/my-orders', '/messages', '/financial-snapshot', '/goals', '/payment-methods'];
     
     return (
         <nav className="lg:hidden bg-bg-secondary border-t border-border-primary pb-[env(safe-area-inset-bottom)] fixed bottom-0 left-0 right-0 z-50">

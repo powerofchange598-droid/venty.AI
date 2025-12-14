@@ -50,7 +50,6 @@ const NavItem: React.FC<NavItemProps> = ({ path, onClick, icon: Icon, label }) =
 const MoreScreen: React.FC<MoreScreenProps> = ({ user }) => {
 
     const regularItems: NavItemProps[] = [
-        { path: '/budget', icon: BanknotesIcon, label: 'Budget' },
         { path: '/financial-snapshot', icon: ChartBarIcon, label: 'Snapshot' },
         { path: '/goals', icon: SparklesIcon, label: 'Goals' },
         { path: '/payment-methods', icon: BanknotesIcon, label: 'Payment Methods' },

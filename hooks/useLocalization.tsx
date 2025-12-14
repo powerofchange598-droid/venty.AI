@@ -27,6 +27,19 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
         localStorage.setItem('ventyCurrency', currency);
     }, [currency]);
 
+    useEffect(() => {
+        const savedCountry = localStorage.getItem('ventyCountry');
+        if (!savedCountry) {
+            try {
+                const lang = (navigator?.language || 'en-US').split('-')[1]?.toUpperCase();
+                if (lang && COUNTRY_CURRENCY[lang]) {
+                    localStorage.setItem('ventyCountry', lang);
+                    setCurrencyState(COUNTRY_CURRENCY[lang].code);
+                }
+            } catch {}
+        }
+    }, []);
+
     const setCurrency = (curr: string) => {
         setCurrencyState(curr);
     };
