@@ -194,7 +194,8 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({ user, onPaymentSuccess })
         (async () => {
             try {
                 const backendEnv: string = (import.meta as any).env?.VITE_PAYPAL_BACKEND_URL || '';
-                const backend: string = window.location.protocol === 'https:' ? '' : backendEnv;
+                const fallback = `${window.location.protocol}//${window.location.hostname}:8080`;
+                const backend: string = backendEnv || fallback;
                 const resp = await fetch(`${backend}/api/promo-codes/active/${safeUserId}`);
                 const data = await resp.json();
                 if (resp.ok && data.ok) {
@@ -210,7 +211,8 @@ const PaymentScreen: React.FC<PaymentScreenProps> = ({ user, onPaymentSuccess })
         setPromoError(false);
         try {
             const backendEnv: string = (import.meta as any).env?.VITE_PAYPAL_BACKEND_URL || '';
-            const backend: string = window.location.protocol === 'https:' ? '' : (backendEnv || `${window.location.protocol}//${window.location.hostname}:8080`);
+            const fallback = `${window.location.protocol}//${window.location.hostname}:8080`;
+            const backend: string = backendEnv || fallback;
             const resp = await fetch(`${backend}/api/promo-codes/apply`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

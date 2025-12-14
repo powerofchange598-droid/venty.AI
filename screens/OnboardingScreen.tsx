@@ -7,7 +7,7 @@ import { HomeIcon, TruckIcon, ShoppingCartIcon, TvIcon, HeartIcon, BuildingStore
 import { mockFamily } from '../data/mockData';
 import Card from '../components/Card';
 import { TOP_100_COUNTRIES } from '../data/TOP_100_COUNTRIES';
-import { COUNTRY_CURRENCY } from '../data/currencyData';
+import { COUNTRY_CURRENCY, AVAILABLE_CURRENCIES } from '../data/currencyData';
 import { useDetectCountry } from '../hooks/useDetectCountry';
 import Copyright from '../components/Copyright';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +15,7 @@ import { GoogleIcon, FacebookIcon, AppleIcon } from '../components/Icons';
 import { useAuth } from '../hooks/useAuth';
 import SelectorModal from '../components/SelectorModal';
 import PasswordStrengthMeter, { checkPasswordStrength } from '../components/PasswordStrengthMeter';
+import { useLocalization } from '../hooks/useLocalization';
 
 interface OnboardingData {
     name: string;
@@ -91,6 +92,8 @@ const PersonalOnboardingForm: React.FC<{ onNext: (data: Omit<OnboardingData, 'ac
     const [countryCode, setCountryCode] = useState('');
     const [countrySelectOpen, setCountrySelectOpen] = useState(false);
     const [currency, setCurrency] = useState('USD');
+    const [currencySelectOpen, setCurrencySelectOpen] = useState(false);
+    const { setCurrency: setGlobalCurrency } = useLocalization();
 
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -119,8 +122,17 @@ const PersonalOnboardingForm: React.FC<{ onNext: (data: Omit<OnboardingData, 'ac
     const handleCountryChange = (val: string) => {
         setCountryCode(val);
         const info = COUNTRY_CURRENCY[val];
-        if (info) setCurrency(info.code);
+        if (info) {
+            setCurrency(info.code);
+            setGlobalCurrency(info.code);
+        }
         setCountrySelectOpen(false);
+    };
+    const currencyItems = AVAILABLE_CURRENCIES.map(cur => ({ key: cur.code, label: `${cur.nameEn} (${cur.code})` }));
+    const handleCurrencyChange = (val: string) => {
+        setCurrency(val);
+        setGlobalCurrency(val);
+        setCurrencySelectOpen(false);
     };
 
     const { signUpWithEmail } = useAuth();
@@ -233,6 +245,11 @@ const PersonalOnboardingForm: React.FC<{ onNext: (data: Omit<OnboardingData, 'ac
                     <div className="flex mt-1">
                         <input type="number" value={salary} onChange={e => setSalary(e.target.value)} placeholder={t('onboarding.incomePlaceholder')} className="w-full"/>
                     </div>
+                    <div className="mt-2">
+                        <button type="button" onClick={() => setCurrencySelectOpen(true)} className="cta-text-link !text-sm w-full justify-start">
+                            Change currency (currently {currency})
+                        </button>
+                    </div>
                 </div>
                 
                 {accountPlan === 'family' ? (
@@ -281,6 +298,7 @@ const PersonalOnboardingForm: React.FC<{ onNext: (data: Omit<OnboardingData, 'ac
                 </VentyButton>
             </div>
             <SelectorModal isOpen={countrySelectOpen} onClose={() => setCountrySelectOpen(false)} title={t('onboarding.selectCountryTitle')} items={countryItems} initialSelectedKey={countryCode} onSelect={handleCountryChange} placeholder={t('settings.searchCountries') || 'Search countries'} />
+            <SelectorModal isOpen={currencySelectOpen} onClose={() => setCurrencySelectOpen(false)} title="Select Currency" items={currencyItems} initialSelectedKey={currency} onSelect={handleCurrencyChange} placeholder="Search currencies" />
         </div>
     );
 };
@@ -352,6 +370,13 @@ const LoginEmailForm: React.FC<{ onLoggedIn: (email: string) => void }> = ({ onL
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
     const { signInWithEmail } = useAuth();
+    const { currency, setCurrency: setGlobalCurrency } = useLocalization();
+    const [currencySelectOpen, setCurrencySelectOpen] = useState(false);
+    const currencyItems = AVAILABLE_CURRENCIES.map(cur => ({ key: cur.code, label: `${cur.nameEn} (${cur.code})` }));
+    const handleCurrencyChange = (val: string) => {
+        setGlobalCurrency(val);
+        setCurrencySelectOpen(false);
+    };
 
     const handleLogin = async () => {
         setError('');
@@ -380,11 +405,19 @@ const LoginEmailForm: React.FC<{ onLoggedIn: (email: string) => void }> = ({ onL
                         </button>
                     </div>
                 </div>
+                <div>
+                    <label className="font-medium text-text-primary">Preferred Currency</label>
+                    <button type="button" onClick={() => setCurrencySelectOpen(true)} className="w-full mt-1 p-3 bg-bg-tertiary text-text-secondary rounded-lg border border-bg-tertiary flex items-center justify-between">
+                        <span className="text-lg">{currency}</span>
+                        <ArrowRightIcon className="w-4 h-4" />
+                    </button>
+                </div>
                 {error && <p className="text-feedback-error text-sm text-center">{error}</p>}
             </div>
             <div className="mt-6">
                 <VentyButton onClick={handleLogin} disabled={!email || !password} label="Log in" variant="primary"></VentyButton>
             </div>
+            <SelectorModal isOpen={currencySelectOpen} onClose={() => setCurrencySelectOpen(false)} title="Select Currency" items={currencyItems} initialSelectedKey={currency} onSelect={handleCurrencyChange} placeholder="Search currencies" />
         </div>
     );
 };

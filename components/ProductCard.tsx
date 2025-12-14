@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useLocalization } from '../hooks/useLocalization';
 import { useCart } from '../hooks/useCart';
 import { useFavourites } from '../hooks/useFavourites';
+import { useToast } from '../hooks/useToast';
 
 interface ProductCardProps {
     product: Product;
@@ -18,6 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({ product, user, isAd = fa
     const { formatCurrency } = useLocalization();
     const { addToCart } = useCart();
     const { isFavourite, toggleFavourite } = useFavourites();
+    const { showToast } = useToast();
 
     const isFavourited = isFavourite(product.id);
     const isFamilyMember = user.accountPlan === 'family' && !user.isFamilyHead && !!user.familyId;
@@ -38,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({ product, user, isAd = fa
         e.preventDefault(); // Prevent navigating when clicking the button
         e.stopPropagation();
         if (user.isGuest) {
-            alert("This feature is disabled in Guest Mode. Please create an account to continue.");
+            showToast("This feature is disabled in Guest Mode. Please create an account to continue.");
             navigate('/onboarding');
             return;
         }
@@ -53,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({ product, user, isAd = fa
         e.preventDefault();
         e.stopPropagation();
         if (user.isGuest) {
-            alert("This feature is disabled in Guest Mode. Please create an account to continue.");
+            showToast("This feature is disabled in Guest Mode. Please create an account to continue.");
             navigate('/onboarding');
             return;
         }

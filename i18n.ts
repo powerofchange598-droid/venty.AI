@@ -2,13 +2,13 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import HttpBackend from 'i18next-http-backend';
 
-const savedLng = typeof window !== 'undefined' ? (localStorage.getItem('ventyLang') || undefined) : undefined;
+const savedLng = 'en';
 
 i18n
   .use(HttpBackend)
   .use(initReactI18next)
   .init({
-    lng: savedLng || 'en',
+    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
@@ -18,15 +18,15 @@ i18n
     },
   });
 
-const rtlLangs = new Set(['ar', 'he', 'fa', 'ur']);
+const rtlLangs = new Set([]);
 
 i18n.on('languageChanged', (lng) => {
-  const base = lng.split('-')[0];
-  const isRtl = rtlLangs.has(base);
+  const base = 'en';
+  const isRtl = false;
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
     document.documentElement.setAttribute('lang', base);
-    try { localStorage.setItem('ventyLang', lng); } catch {}
+    try { localStorage.setItem('ventyLang', 'en'); } catch {}
   }
 });
 

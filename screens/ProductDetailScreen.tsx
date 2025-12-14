@@ -5,6 +5,7 @@ import { mockProducts, mockProductReviews, mockMerchantUser } from '../data/mock
 import { filterReviewComment } from '../utils/chatHelper';
 import { useLocalization } from '../hooks/useLocalization';
 import { useCart } from '../hooks/useCart';
+import { useToast } from '../hooks/useToast';
 import PageLayout from '../components/PageLayout';
 import ShareModal from '../components/ShareModal';
 import Card from '../components/Card';
@@ -103,6 +104,7 @@ const ProductDetailScreen: React.FC<{ user: User }> = ({ user }) => {
     const navigate = useNavigate();
     const { formatCurrency } = useLocalization();
     const { addToCart } = useCart();
+    const { showToast } = useToast();
     const [allReviews, setAllReviews] = useState<ProductReview[]>(mockProductReviews);
     const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
     const [isShareModalOpen, setIsShareModalOpen] = useState(false);
@@ -115,7 +117,7 @@ const ProductDetailScreen: React.FC<{ user: User }> = ({ user }) => {
     const handleAddToCart = () => {
         if (!product) return;
         if (user.isGuest) {
-            alert(t('alerts.guestAction'));
+            showToast("This feature is disabled in Guest Mode. Please create an account to continue.");
             navigate('/onboarding');
             return;
         }
@@ -129,7 +131,7 @@ const ProductDetailScreen: React.FC<{ user: User }> = ({ user }) => {
     const handleBuyNow = () => {
         if (!product) return;
         if (user.isGuest) {
-            alert(t('alerts.guestAction'));
+            showToast("This feature is disabled in Guest Mode. Please create an account to continue.");
             navigate('/onboarding');
             return;
         }
@@ -156,7 +158,7 @@ const ProductDetailScreen: React.FC<{ user: User }> = ({ user }) => {
             status
         };
         setAllReviews(prev => [newReview, ...prev]);
-        alert(status === 'flagged' ? 'Your review has been submitted for moderation.' : 'Thank you for your review!');
+        showToast(status === 'flagged' ? 'Your review has been submitted for moderation.' : 'Thank you for your review!');
     };
     
     const productImages = useMemo(() => [product?.imageUrl, ...(product?.images || [])].filter(Boolean) as string[], [product]);

@@ -41,7 +41,8 @@ const PayPalButton: React.FC<PayPalButtonProps> = ({ amount, description, onSucc
 
         try {
             const backendEnv: string = (import.meta as any).env?.VITE_PAYPAL_BACKEND_URL || '';
-            const backend: string = window.location.protocol === 'https:' ? '' : backendEnv;
+            const fallback = `${window.location.protocol}//${window.location.hostname}:8080`;
+            const backend: string = backendEnv || fallback;
             let health: any = null;
             for (let i = 0; i < 2; i++) {
                 try {
