@@ -106,6 +106,7 @@ const USERS_FILE = path.join(__dirname, 'data', 'users.json');
 const WEBVIEW_CLICKS_FILE = path.join(__dirname, 'data', 'webview-clicks.json');
 const SESSIONS_FILE = path.join(__dirname, 'data', 'sessions.json');
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
 const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID || '';
 const FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET || '';
 const APPLE_CLIENT_ID = process.env.APPLE_CLIENT_ID || '';
@@ -532,6 +533,59 @@ app.post('/api/auth/session/apple', async (req, res) => {
     res.json({ ok: true, user });
   } catch {
     res.status(401).json({ ok: false, error: 'invalid_token' });
+  }
+});
+
+// Google OAuth Authorization Code Flow (dev)
+app.get('/api/auth/google', async (req, res) => {
+  try {
+    const baseUrl = CLIENT_BASE_URL;
+    const redirectUri = `${baseUrl}/api/auth/google`;
+    const { code, state = '' } = req.query || {};
+    if (!code) {
+      if (!GOOGLE_CLIENT_ID || !redirectUri) {
+        return res.status(500).json({ ok: false, error: 'google_oauth_not_configured' });
+      }
+      const authUrl = new URL('https://accounts.google.com/o/oauth2/v2/auth');
+      authUrl.searchParams.set('client_id', GOOGLE_CLIENT_ID);
+      authUrl.searchParams.set('redirect_uri', redirectUri);
+      authUrl.searchParams.set('response_type', 'code');
+      authUrl.searchParams.set('scope', 'openid email profile');
+      authUrl.searchParams.set('prompt', 'select_account');
+      if (state) authUrl.searchParams.set('state', String(state));
+      return res.redirect(authUrl.toString());
+    }
+    if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET) {
+      return res.status(500).json({ ok: false, error: 'google_env_missing' });
+    }
+    const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        code: String(code),
+        client_id: GOOGLE_CLIENT_ID,
+        client_secret: GOOGLE_CLIENT_SECRET,
+        redirect_uri: redirectUri,
+        grant_type: 'authorization_code',
+      }),
+    });
+    const tokenData = await tokenRes.json();
+    if (!tokenRes.ok || !tokenData.id_token) {
+      return res.status(401).json({ ok: false, error: 'code_exchange_failed', data: tokenData });
+    }
+    const tokeninfo = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(tokenData.id_token)}`);
+    const info = await tokeninfo.json();
+    if (!tokeninfo.ok || info.aud !== GOOGLE_CLIENT_ID) {
+      return res.status(401).json({ ok: false, error: 'invalid_token' });
+    }
+    const identity = { provider: 'google', providerId: info.sub, email: info.email, name: info.name };
+    const user = upsertUserFromIdentity(identity);
+    const sid = createSession(user.userId);
+    setSessionCookie(res, sid);
+    const returnTo = state && /^\/[a-zA-Z0-9_\-\/?=&.]*$/.test(String(state)) ? String(state) : '/';
+    return res.redirect(`${baseUrl}${returnTo}`);
+  } catch (e) {
+    return res.status(500).json({ ok: false, error: 'server_error' });
   }
 });
 
