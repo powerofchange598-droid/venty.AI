@@ -583,9 +583,12 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete, onJoinF
     const handleSocialLogin = async (provider: 'google' | 'facebook' | 'apple') => {
         setAuthState({ provider, isLoading: true, isSuccess: false });
         try {
+            if (provider === 'google') {
+                await signInWithGoogle();
+                return;
+            }
             let u = null;
-            if (provider === 'google') u = await signInWithGoogle();
-            else if (provider === 'facebook') u = await signInWithFacebook();
+            if (provider === 'facebook') u = await signInWithFacebook();
             else u = await signInWithApple();
             if (u) {
                 const data = { name: u.displayName || '', email: u.email || '' };

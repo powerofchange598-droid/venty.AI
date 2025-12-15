@@ -71,30 +71,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signInWithGoogle = async () => {
     try {
-      const provider = new GoogleAuthProvider();
-      const a = getAuth();
-      if (!a) return null;
-      const res = await signInWithPopup(a, provider);
-      const cred = GoogleAuthProvider.credentialFromResult(res);
-      const idToken = cred?.idToken;
-      if (!idToken) {
-        setUser(null);
-        return null;
-      }
-      const r = await fetch(`${API_BASE}/api/auth/google`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({ idToken }),
-      });
-      const data = await r.json();
-      if (!r.ok || !data?.ok) {
-        setUser(null);
-        return null;
-      }
-      const u = makeFakeUser(data.user?.email || res.user.email || '', data.user?.name || res.user.displayName || '');
-      setUser(u);
-      return u;
+      const returnTo = window.location.pathname || '/';
+      const state = encodeURIComponent(returnTo);
+      window.location.assign(`/api/auth/google?state=${state}`);
+      return null;
     } catch {
       return null;
     }
