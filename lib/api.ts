@@ -2,7 +2,10 @@ import type { BudgetCategory, FixedExpense, Goal, User } from '../types';
 
 type TransferType = 'internal' | 'user' | 'wallet' | 'linked';
 
-const API_BASE = (typeof process !== 'undefined' && (process as any).env?.API_BASE_URL) || '/api';
+const API_BASE =
+  (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_API_BASE_URL) ||
+  (typeof process !== 'undefined' && (process as any).env?.API_BASE_URL) ||
+  '';
 
 const getToken = () => {
   try {
@@ -22,7 +25,8 @@ const headers = () => {
 
 const request = async (path: string, init?: RequestInit) => {
   try {
-    const res = await fetch(`${API_BASE}${path}`, {
+    const base = API_BASE || '';
+    const res = await fetch(`${base}/api${path}`, {
       method: 'GET',
       ...init,
       headers: { ...headers(), ...(init?.headers || {}) },
@@ -73,4 +77,3 @@ export const api = {
   transfer: (userId: string, payload: { amount: number; type: TransferType; direction: 'out' | 'in'; target?: string; notes?: string }) =>
     request(`/users/${userId}/transfer`, { method: 'POST', body: JSON.stringify(payload) }),
 };
-

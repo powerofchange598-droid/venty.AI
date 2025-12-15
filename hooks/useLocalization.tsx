@@ -7,6 +7,8 @@ interface LocalizationContextType {
     currency: string;
     setCurrency: (curr: string) => void;
     formatCurrency: (value: number) => string;
+    formatCurrencyEn: (value: number) => string;
+    formatNumberEn: (value: number) => string;
     language: string;
 }
 
@@ -57,10 +59,36 @@ export const LocalizationProvider: React.FC<{ children: ReactNode }> = ({ childr
         }
     }, [currency, i18n.language]);
 
+    const formatCurrencyEn = useCallback((value: number) => {
+        try {
+            return new Intl.NumberFormat('en', {
+                style: 'currency',
+                currency,
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            }).format(value);
+        } catch {
+            return `${Math.round(value).toLocaleString('en-US')} ${currency}`;
+        }
+    }, [currency]);
+
+    const formatNumberEn = useCallback((value: number) => {
+        try {
+            return new Intl.NumberFormat('en', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            }).format(value);
+        } catch {
+            return Math.round(value).toString();
+        }
+    }, []);
+
     const value = {
         currency,
         setCurrency,
         formatCurrency,
+        formatCurrencyEn,
+        formatNumberEn,
         language: i18n.language,
     };
 

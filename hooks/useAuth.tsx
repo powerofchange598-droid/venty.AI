@@ -26,6 +26,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<FirebaseUser | null>(null);
+  const API_BASE = (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_API_BASE_URL) || '';
 
   const getLocalUsers = () => {
     try {
@@ -56,7 +57,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     let canceled = false;
     (async () => {
       try {
-        const r = await fetch('/api/auth/me', { credentials: 'include' });
+        const r = await fetch(`${API_BASE}/api/auth/me`, { credentials: 'include' });
         const data = await r.json();
         if (!canceled && data?.ok && data.user) {
           const u = makeFakeUser(data.user.email || '', data.user.name || '');
@@ -80,7 +81,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(null);
         return null;
       }
-      const r = await fetch('/api/auth/session/google', {
+      const r = await fetch(`${API_BASE}/api/auth/google`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -111,7 +112,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(null);
         return null;
       }
-      const r = await fetch('/api/auth/session/facebook', {
+      const r = await fetch(`${API_BASE}/api/auth/facebook`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -142,7 +143,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(null);
         return null;
       }
-      const r = await fetch('/api/auth/session/apple', {
+      const r = await fetch(`${API_BASE}/api/auth/apple`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -163,7 +164,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signUpWithEmail = async (email: string, password: string) => {
     try {
-      const r = await fetch('/api/auth/email/signup', {
+      const r = await fetch(`${API_BASE}/api/auth/email/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -182,7 +183,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signInWithEmail = async (email: string, password: string) => {
     try {
-      const r = await fetch('/api/auth/email/login', {
+      const r = await fetch(`${API_BASE}/api/auth/email/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -202,7 +203,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signOutFn = async () => {
     const a = getAuth();
     try {
-      await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
+      await fetch(`${API_BASE}/api/auth/logout`, { method: 'POST', credentials: 'include' });
     } catch {}
     if (a) {
       await signOut(a);

@@ -33,13 +33,13 @@ const DateSelectorCard: React.FC = () => {
                 <div className="flex justify-between items-center w-full">
                     <span className="text-[10px] font-bold text-text-tertiary uppercase">START DATE</span>
                     <div className="bg-text-primary text-bg-primary px-4 py-2 rounded-lg text-xs font-medium w-32 text-center">
-                        1 {currentDate.toLocaleString('default', { month: 'short' })} {currentYear}
+                        {new Intl.NumberFormat('en').format(1)} {currentDate.toLocaleString('en', { month: 'short' })} {new Intl.NumberFormat('en').format(currentYear)}
                     </div>
                 </div>
                 <div className="flex justify-between items-center w-full">
                     <span className="text-[10px] font-bold text-text-tertiary uppercase">END DATE</span>
                     <div className="bg-text-primary text-bg-primary px-4 py-2 rounded-lg text-xs font-medium w-32 text-center">
-                        30 {currentDate.toLocaleString('default', { month: 'short' })} {currentYear}
+                        {new Intl.NumberFormat('en').format(30)} {currentDate.toLocaleString('en', { month: 'short' })} {new Intl.NumberFormat('en').format(currentYear)}
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@ const TrackerCard: React.FC<{
 // --- MAIN SCREEN ---
 
 const BudgetScreen: React.FC<BudgetScreenProps> = ({ user, initialBudget, fixedExpenses, totalIncomeForBudget, goals }) => {
-    const { formatCurrency, currency } = useLocalization();
+    const { formatCurrencyEn: formatCurrency, formatNumberEn } = useLocalization();
 
     const [incomeRows, setIncomeRows] = useState(() => [
         { id: `inc_1`, label: 'Paycheck 1', budget: user.salary * 0.5, actual: user.salary * 0.5 },
@@ -209,7 +209,7 @@ const BudgetScreen: React.FC<BudgetScreenProps> = ({ user, initialBudget, fixedE
                 {/* --- TOP ROW: HEADERS & CHARTS --- */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                     <DateSelectorCard />
-                    <LeftToSpendChart left={leftActual} spent={totalActualOut} currency={currency === 'USD' ? '$' : currency} />
+<LeftToSpendChart left={leftActual} spent={totalActualOut} currency="$" />
                     <CashFlowChart income={totalIncome} out={totalActualOut} />
                     <AllocationChart bills={billsActual} expenses={expensesActual} savings={savingsActual} debt={debtActual} />
                 </div>
